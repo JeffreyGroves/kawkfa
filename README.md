@@ -6,6 +6,7 @@ This is a series of awk scripts that create json files for managing removal and 
 manner.
 
 The gist:
+```
 Create a file with all of the topics and partitions using dump-partitions.sh
 Create a json file to remove the broker that is to be shutdown  using the file created by dump-partitions.sh with the kawkfa-pre-shutdown.sh
 script redirecting the output to file file
@@ -18,6 +19,7 @@ Run the json file using the doReassign.sh script on you Kafka cluster.  This wil
 but add it back as the last entry in the replicas list.  We don't want this broker to be the Leader of any partitions just yet.
 Create a json file to randomize the preferred replica for each partition using the file created by the dump-partitions.sh with the kawka-normalize.sh script.
 Run the json file using the doReassign.sh script on you Kafka cluster.  This will randomize the broker that is the preferred broker for those partitions that involve the broker that was just returned to the cluster.
+```
 
 This is just a rough description of the use of these scripts.
 
