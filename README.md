@@ -17,6 +17,7 @@ The gist:
 - Run the json file using the doReassign.sh script on you Kafka cluster.  This will add back the partitions that were previously on this node
 - but add it back as the last entry in the replicas list.  We don't want this broker to be the Leader of any partitions just yet.
 - Create a json file to randomize the preferred replica for each partition using the file created by the dump-partitions.sh with the kawka-normalize.sh script.
+- Chop that json file up into smaller chunks of 50 to 100 partitions.
 - Run the json file using the doReassign.sh script on you Kafka cluster.  This will randomize the broker that is the preferred broker for those partitions that involve the broker that was just returned to the cluster.
 
 
